@@ -3,7 +3,7 @@ import Home from './pages/Home.jsx';
 import Login from './pages/auth/Login.jsx';
 import Registro from './pages/auth/RegisterForm.jsx';
 import Chat from './pages/cv-creation/Chat.jsx';
-import Plantillas from './pages/cv-creation/Plantilla.jsx';
+import Plantillas from './pages/cv-creation/Plantillas.jsx';
 import Pdf from './pages/cv-creation/PDF.jsx'; // Asegúrate de que este componente exista
 import CvCreado from './pages/cv-creation/CvCreado.jsx';
 

@@ -1,6 +1,12 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router';
 
+// Rutas centralizadas para consistencia
+const APP_ROUTES = {
+  CV_CREADO: '/CvCreado',
+  REGISTRO: '/Registro'
+};
+
 const Plantillas = () => {
   const [experience, setExperience] = useState('Todas las plantillas');
   const [photoFilter, setPhotoFilter] = useState('con');
@@ -83,7 +89,19 @@ const Plantillas = () => {
   });
 
   const handleSelectTemplate = (templateId) => {
-    navigate(`/CvCreado/${templateId}`);
+    // Redirección consistente con validación
+    if (templateId) {
+      navigate(`${APP_ROUTES.CV_CREADO}/${templateId}`, {
+        replace: true,
+        state: { 
+          templateData: templates.find(t => t.id === templateId),
+          origin: 'plantillas'
+        }
+      });
+    } else {
+      console.error('ID de plantilla no válido');
+      navigate(APP_ROUTES.REGISTRO); // Fallback seguro
+    }
   };
 
   return (
@@ -215,7 +233,6 @@ const Plantillas = () => {
             </div>
             <div className="flex space-x-6">
               <a className="text-gray-400 hover:text-blue-400 transition-colors">"Diseños simples, oportunidades claras"</a>
-              
             </div>
           </div>
           <div className="border-t border-gray-800 mt-6 pt-6 text-center text-gray-500 text-sm">
