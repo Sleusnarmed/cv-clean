@@ -9,7 +9,8 @@ export default defineConfig({
     outDir: 'dist',
   },
   server: {
-    port:  4173,  // Use the PORT provided by Render or default to 4173
+    port: process.env.PORT || 4173,  // Use the PORT provided by Render or default to 4173
     host: '0.0.0.0',                 // Make the server accessible externally
   },
 });
+
