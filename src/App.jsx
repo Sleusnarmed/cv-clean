@@ -1,9 +1,10 @@
-import CVGenerator from './components/client/curriculum/CVGenerator.jsx';
 
 function App() {
   return (
-    <div className="App">
-      <CVGenerator />
+    <div>
+      <h2 className="text-2xl font-extrabold text-gray-900 mb-6">
+          Inicia sesión en tu cuenta
+        </h2>
     </div>
   );
 }
