@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router';
 const Plantillas = () => {
   const [experience, setExperience] = useState('Todas las plantillas');
   const [photoFilter, setPhotoFilter] = useState('con');
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const navigate = useNavigate();
   
   const templates = [
@@ -98,14 +97,6 @@ const Plantillas = () => {
               className="h-16 w-auto"
             />
           </div>
-          <button 
-            className="md:hidden text-gray-700 hover:text-blue-800 transition-colors"
-            onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-          >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          </button>
         </div>
         <div className="container mx-auto px-4 pb-8">
           <h1 className="text-2xl md:text-3xl font-bold tracking-tight">
@@ -116,7 +107,7 @@ const Plantillas = () => {
       </header>
 
       <div className="container mx-auto px-4 py-8 flex flex-col md:flex-row">
-        <aside className={`${isSidebarOpen ? 'block' : 'hidden'} md:block w-full md:w-72 bg-white p-6 rounded-lg shadow-md mb-6 md:mb-0 md:mr-8 border border-gray-200`}>
+        <aside className="w-full md:w-72 bg-white p-6 rounded-lg shadow-md mb-6 md:mb-0 md:mr-8 border border-gray-200">
           <div className="mb-6">
             <h3 className="font-semibold text-gray-900 mb-3 text-lg">Años de experiencia</h3>
             <select 
@@ -223,9 +214,8 @@ const Plantillas = () => {
               <p className="text-gray-400 text-sm mt-1">Crea tu currículum profesional en minutos</p>
             </div>
             <div className="flex space-x-6">
-              <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">Términos</a>
-              <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">Privacidad</a>
-              <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">Contacto</a>
+              <a className="text-gray-400 hover:text-blue-400 transition-colors">"Diseños simples, oportunidades claras"</a>
+              
             </div>
           </div>
           <div className="border-t border-gray-800 mt-6 pt-6 text-center text-gray-500 text-sm">

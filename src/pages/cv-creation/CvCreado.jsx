@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { FiUser, FiMail, FiLock, FiCheck, FiUserPlus, FiAlertCircle, FiArrowRight } from 'react-icons/fi';
 import { Link, useNavigate } from 'react-router';
 
-export default function Registro() {
+export default function CvCreado() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
