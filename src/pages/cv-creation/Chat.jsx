@@ -26,7 +26,7 @@ const Chat = () => {
     const initChat = async () => {
       setIsLoading(true);
       try {
-        const response = await axios.post('http://localhost:5000/api/chat/init', { userId });
+        const response = await axios.post('https://cv-generator-backend-w24b.onrender.com/api/chat/init', { userId });
         setMessages([{ sender: 'ai', text: response.data.message }]);
         if (response.data.cvProgress) {
           setCvProgress(response.data.cvProgress);
@@ -55,7 +55,7 @@ const Chat = () => {
 
     try {
       // Send message to backend
-      const response = await axios.post('http://localhost:5000/api/chat/send', {
+      const response = await axios.post('https://cv-generator-backend-w24b.onrender.com/api/chat/send', {
         userId,
         message: inputMessage
       });
@@ -106,7 +106,7 @@ const Chat = () => {
   useEffect(() => {
     const checkCVStatus = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/api/chat/status/${userId}`);
+        const response = await axios.get(`https://cv-generator-backend-w24b.onrender.com/api/chat/status/${userId}`);
         if (response.data) {
           setCvProgress(prev => ({
             ...prev,
@@ -139,7 +139,7 @@ const Chat = () => {
     }
     try {
       setIsLoading(true);
-      const response = await axios.get(`http://localhost:5000/api/cv/${userId}/pdf`, {
+      const response = await axios.get(`https://cv-generator-backend-w24b.onrender.com/api/cv/${userId}/pdf`, {
         responseType: 'blob'
       });
       
