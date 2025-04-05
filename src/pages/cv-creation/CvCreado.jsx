@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router';
 import { FaPhone, FaEnvelope, FaHome, FaBirthdayCake, FaGlobe, FaHeart, FaLink, FaUser, FaUpload, FaEdit, FaTrash, FaPlus, FaFilePdf } from 'react-icons/fa';
 
 export default function CvCreado() {
