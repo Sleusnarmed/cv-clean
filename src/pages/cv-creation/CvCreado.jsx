@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { FiUser, FiMail, FiLock, FiCheck, FiUserPlus, FiAlertCircle, FiArrowRight } from 'react-icons/fi';
 import { Link, useNavigate } from 'react-router';
 
-export default function RegisterForm() {
+export default function Registro() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
